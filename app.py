@@ -3,7 +3,7 @@ import streamlit
 import pandas as pd
 import joblib
 
-loaded_model = joblib.load('deployment_files/xgb_model_boston_v1.0')
+loaded_model = joblib.load('xgb_model_boston_v1.0')
 
 st.title('Boston House Price Prediction')
 CRIM = st.slider('Per Capita Crime Rate(CRIM)',0,100,0.2,0.1)
