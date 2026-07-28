@@ -10,7 +10,7 @@ CRIM = st.slider('Per Capita Crime Rate(CRIM)',0,100,0.2,0.1)
 ZN = st.slider('Proportion of Residential Land Over 25,000 sq. ft.(ZN)',0,100,0.2,0.1)
 INDUS = st.slider('Proportion of Non-Retail Business Acres(INDUS)',0,100,0.2,0.1)
 NX = st.slider('Nitric Oxides Concentration(NOX)',0,1,0.55,0.01)
-RM = st.slider('Average Number of Rooms Per House(RM)',3,9,6.3.1)
+RM = st.slider('Average Number of Rooms Per House(RM)',3,9,6,3,1)
 AGE = st.slider("Proportion of owner-occupied units built prior to 1940 (AGE)", 0.0, 100.0, 65.0, 1.0)
 DIS = st.slider("Weighted distances to employment centers (DIS)", 1.0, 12.0, 4.0, 0.1)
 RAD = st.slider("Index of accessibility to radial highways (RAD)", 1, 24, 4, 1)
@@ -28,4 +28,4 @@ input_data = pd.DataFrame([[CRIM,ZN,INDUS,CHAS,NX,RM,AGE,DIS,RAD,TAX,PTRATIO,LST
 
 if st.button ('Predict MEDV'):
     predicted_price = loaded_model.predict(input_data)
-    st.success(f'Predicted MEDV: {predicted_price[0]*1000:.2f}'
+    st.success(f'Predicted MEDV: {predicted_price[0]*1000:.2f}')
