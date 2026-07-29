@@ -41,5 +41,5 @@ input_data = pd.DataFrame([{
 
 # Predict button
 if st.button("Predict MEDV"):
-    predicted_price = model.predict(input_data)[0]
+    predicted_price = loaded_model.predict(input_data)[0]
     st.success(f"💰 Estimated Median Value of Home (MEDV): ${predicted_price*1000:,.2f}")
