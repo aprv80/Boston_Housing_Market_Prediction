@@ -24,8 +24,22 @@ if CHAS == 'Yes':
 else:
     CHAS = 0
 
-input_data = pd.DataFrame([[CRIM,ZN,INDUS,CHAS,NX,RM,AGE,DIS,RAD,TAX,PTRATIO,LSTAT,RAD]])
+input_data = pd.DataFrame([{
+    'CRIM': CRIM,
+    'ZN': ZN,
+    'INDUS': INDUS,
+    'NX': NX,
+    'RM': RM,
+    'AGE': AGE,
+    'DIS': DIS,
+    'RAD': RAD,
+    'TAX': TAX,
+    'PTRATIO': PTRATIO,
+    'LSTAT': LSTAT,
+    'CHAS': CHAS_value
+}])
 
-if st.button ('Predict MEDV'):
-    predicted_price = loaded_model.predict(input_data)
-    st.success(f'Predicted MEDV: {predicted_price[0]*1000:.2f}')
+# Predict button
+if st.button("Predict MEDV"):
+    predicted_price = model.predict(input_data)[0]
+    st.success(f"💰 Estimated Median Value of Home (MEDV): ${predicted_price*1000:,.2f}")
