@@ -36,7 +36,7 @@ input_data = pd.DataFrame([{
     'TAX': TAX,
     'PTRATIO': PTRATIO,
     'LSTAT': LSTAT,
-    'CHAS': CHAS_value
+    'CHAS': CHAS
 }])
 
 # Predict button
